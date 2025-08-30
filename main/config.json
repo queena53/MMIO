@@ -1,0 +1,31 @@
+{
+  "data_root": "./SUVr_cerebellum_classified/noich_right_hemisphere_suvr_cerebellum_temporal_mask_frame5_12_slice1_class_npydata",
+  "selected_classes": ["AD", "CAA_ICH"],
+  "subject_json": "subjects_data_with_abeta.json",
+  "project_name": "classification_newfold_AD_CAA_suvr_cerebellum_temporal_mask_frame5_12_slice1",
+  "weight_decay": 0.01,
+  "5fold_json":"5fold.json",
+  "num_classes": 2,
+  "epochs": 200,
+  "batch_size": 1,
+  "learning_rate": 1e-10,
+  "l1_lambda": 1e-4,
+  "l2_lambda": 5e-4,
+  "num_folds": 5,
+  "use_wandb": true,
+
+
+  "test_data_path": "noich_right_hemisphere_mask_frame5_slice1_class_npydata/test",
+  "model_path": "./output/classification_AD_CAA_mask6_frame5_denseNet/desenet121_CrossEntropyLosslabel_smoothing/desenet121_CrossEntropyLosslabel_smoothing_fold_2_model.pth",
+  "predict_output_path": "predict/mask_frame5_slice1/fold2",
+  "in_channel": 1,
+
+
+  "gradcam_enabled": true,
+  "gradcam_target_layer": "features.denseblock4.denselayer2.layers.conv2",
+
+  "gradcam_selected_frame": 10,
+  "gradcam_input_root": "./noich_right_hemisphere_mask_frame5_slice1_class_npydata",
+  "gradcam_output_root": "gradcam_outputs/png_collection/frame5_fold2"
+  
+}
